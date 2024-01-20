@@ -20,6 +20,7 @@ int main() {
 	fout.open("CSC450_CT5_mod5.txt", ios::app);
 
 	while (fout){
+		cout << "Enter a string to be written to the file or '-1' to quit: \n";
 		getline(cin, userInput);
 		if(userInput == "-1")
 			break;
