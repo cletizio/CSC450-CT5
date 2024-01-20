@@ -3,7 +3,8 @@
 // Author      : Chris Letizio
 // Version     : 1.0
 // Copyright   : Your copyright notice
-// Description : Program to append a file in C++
+// Description : Program to append a file in C++, then write a new file with
+//               the lines reversed.
 //============================================================================
 
 
@@ -17,6 +18,7 @@ void reverseFile(const string& inputFile, const string& outputFile){
 	ifstream fin(inputFile);
 	ofstream fout(outputFile);
 
+	//Check to make sure the files opened correctly
 	if (!fin){
 		cerr << "There was an error opening the input file: " << inputFile << endl;
 		return;
@@ -29,11 +31,13 @@ void reverseFile(const string& inputFile, const string& outputFile){
 
 	string line;
 
+	// Reverse the strings line by line.
 	while (getline(fin, line)){
 		reverse(line.begin(), line.end());
 		fout << line << endl;
 	}
 
+	// Close the files for security
 	fin.close();
 	fout.close();
 
@@ -63,11 +67,12 @@ int main() {
 	ifstream fin;
 
 	// Open and read the original file
+	cout << "\nContents of the original file: \n";
 	fin.open("CSC450_CT5_mod5.txt");
 
 
 	while (getline(fin, userInput)){
-		cout<< userInput << endl;
+		cout<< endl << userInput << endl;
 	}
 
 	fin.close();
@@ -79,7 +84,7 @@ int main() {
 	fin.open("CSC450-mod5-reverse.txt");
 
 	while (getline(fin, userInput)){
-		cout << userInput << endl;
+		cout << endl << userInput << endl;
 	}
 
 	return 0;
