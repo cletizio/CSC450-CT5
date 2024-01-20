@@ -1,4 +1,5 @@
 Please be sure to append your data to this text file.
 If these first three lines are deleted, then your program is not
-functioning as expected.This is the appended Line
-This line is the appended line.
+functioning as expected.This is the appended line
+Potato
+Bean
