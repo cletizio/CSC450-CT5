@@ -1,9 +1,9 @@
 //============================================================================
 // Name        : CSC450-CT5.cpp
-// Author      : 
-// Version     :
+// Author      : Chris Letizio
+// Version     : 1.0
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Program to append a file in C++
 //============================================================================
 
 
@@ -17,8 +17,29 @@ int main() {
 
 	ofstream fout;
 
-	fout.open(CSC450_CT5_mod5.txt, ios::app);
+	fout.open("CSC450_CT5_mod5.txt", ios::app);
 
-	cout << fout;
+	while (fout){
+		getline(cin, userInput);
+		if(userInput == "-1")
+			break;
+		fout << userInput << endl;
+	}
+
+	fout.close();
+
+	ifstream fin;
+
+	fin.open("CSC450_CT5_mod5.txt");
+
+	string line;
+
+	while (getline(fin, line)){
+		cout<< line << endl;
+	}
+
+	fin.close();
+
+	return 0;
 
 }
