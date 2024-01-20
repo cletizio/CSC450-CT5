@@ -6,10 +6,19 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
+
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main() {
-	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
-	return 0;
+
+	string userInput;
+
+	ofstream fout;
+
+	fout.open(CSC450_CT5_mod5.txt, ios::app);
+
+	cout << fout;
+
 }
